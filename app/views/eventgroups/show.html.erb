@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @eventgroup %>
+
+<div>
+  <%= link_to "Edit this eventgroup", edit_eventgroup_path(@eventgroup) %> |
+  <%= link_to "Back to eventgroups", eventgroups_path %>
+
+  <%= button_to "Destroy this eventgroup", @eventgroup, method: :delete %>
+</div>

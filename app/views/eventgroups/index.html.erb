@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+<h5>Groups Listing</h5>
+<br/>
+<div id="eventgroups">
+   <% @eventgroups.each do |eventgroup| %>
+    <strong>Group Name:</strong><%= eventgroup.name %> <b>Group Organizer(s): </b> <%= eventgroup.people.where(:role => 'Organizer').pluck(:firstname, :lastname).map{|x| x.join(' ')}.join(', ') %> 
+      <%= link_to "view group", eventgroup %> <br/><br/>
+  <% end %>
+</div>
+
+<%= link_to "Create New Group", new_eventgroup_path %>

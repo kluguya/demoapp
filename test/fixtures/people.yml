@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstname: MyStringFname
+  lastname: MyStringLname
+  groupname: MyString
+  role: Participant
+
+two:
+  firstname: fname
+  lastname: lname
+  groupname: MyGroup
+  role: Organizer

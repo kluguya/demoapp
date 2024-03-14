@@ -1,0 +1,10 @@
+<div id="<%= dom_id eventgroup %>">
+  <p>
+    <strong>Group Name:</strong>
+    <%= eventgroup.name %> <b>Group Organizer(s): </b> <%= eventgroup.people.where(:role => 'Organizer').pluck(:firstname, :lastname).map{|x| x.join(' ')}.join(', ') %> 
+  </p>
+  <b>Others Group Members Include:</b><br/> 
+  <% eventgroup.people.where.not(:role => 'Organizer').pluck(:firstname, :lastname, :role).map{|x| x.join(' ')}.each do |groupmember| %>
+   <%= groupmember %><br/>
+  <%end%>
+</div>

@@ -1,0 +1,19 @@
+<p style="color: green"><%= raw(flash[:notice])  %></p>
+<h5>People Listing</h5>
+
+<%=form_with url: import_people_path, method: :post do |form| %>
+  <%= form.file_field :file, accept: ".csv", class: "form-control", :required => 'required'%>
+  <br/>
+  <%= form.button "import", class: "btn btn-primary" %>
+<%end%>
+<br/>
+<div id="people">
+  <% @people.each do |person| %>
+    <%= render person %>
+    <p>
+      <%= link_to "Show this person", person %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New person", new_person_path %>

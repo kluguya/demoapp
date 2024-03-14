@@ -1,0 +1,15 @@
+<% if user_signed_in? %> 
+  <div> Welcome <%= current_user.email %> 
+  <%= button_to "Sign out", destroy_user_session_path, class: 'btn btn-danger float-end', method: :delete %> 
+</div>
+<br/>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Home", root_path%></li>
+    <li class="breadcrumb-item"><%= link_to "People", people_path%></li>
+    <li class="breadcrumb-item"><%= link_to "Groups", eventgroups_path%></li>
+  </ol>
+</nav>
+<%else%>
+<%= link_to "Sign in", new_user_session_path,  data: { turbo: false }, class: "btn btn-primary float-end" %> 
+<% end %>
