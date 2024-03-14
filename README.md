@@ -46,3 +46,12 @@ rails db:migrate
 rails db:seed
 # Additional Rails commands can be run from here.
 ```
+
+* Usage
+    - Browse to http://localhost:3000/ to sign_in/sign_up
+    - Devise Login: After app is configured and running create a new username/password by visiting the signup page.  This will allow to access the app, dummy emails addresses can be used during sign-up.
+    - File Import: Test person file import by using sample csv file 'sample.cvs' on application root folder.  It inlcudes bad records to demonstrate constraints and validations.
+    - Other caveats People can belong to many groups ("eventgroups") but can only in one group once.
+
+* Services
+    - importservice service for the person model (app/services/csv_import_people_service.rb) it adds person records to the database while creating any new groups to the eventgroup table based on a csv file.
